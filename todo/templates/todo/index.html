@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Todo</title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %}
+      {{ todo_formset.management_form }}
+      {% for todo_form in todo_formset %}
+        {{ todo_form }} <br>
+      {% endfor %}
+      <input type="submit" value="Salvar"></input>
+    </form>
+  </body>
+</html>
